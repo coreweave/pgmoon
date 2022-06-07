@@ -89,6 +89,8 @@ return {
     if socket_type == nil then
       if ngx and ngx.get_phase() ~= "init" then
         socket_type = "nginx"
+      elseif core and core.get_info() then
+        socket_type = "haproxy"
       else
         socket_type = "luasocket"
       end
@@ -99,6 +101,8 @@ return {
       socket = ngx.socket.tcp()
     elseif "luasocket" == _exp_0 then
       socket = create_luasocket()
+    elseif "haproxy" == _exp_0 then
+      socket = core.tcp(...)
     elseif "cqueues" == _exp_0 then
       socket = require("pgmoon.cqueues").CqueuesSocket()
     else

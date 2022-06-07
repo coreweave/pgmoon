@@ -85,6 +85,8 @@ create_luasocket = do
       -- luasocket
       socket_type = if ngx and ngx.get_phase! != "init"
         "nginx"
+      elseif core and core.get_info!
+        "haproxy"
       else
         "luasocket"
 
@@ -93,6 +95,8 @@ create_luasocket = do
         ngx.socket.tcp!
       when "luasocket"
         create_luasocket!
+      when "haproxy"
+        core.tcp ...
       when "cqueues"
         require("pgmoon.cqueues").CqueuesSocket!
       else
