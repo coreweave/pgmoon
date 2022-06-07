@@ -2,7 +2,8 @@ package = "pgmoon"
 version = "dev-1"
 
 source = {
-  url = "git+https://github.com/leafo/pgmoon.git"
+  url = "git+https://github.com/coreweave/pgmoon.git",
+  tag = "mc/haproxy-socket-with-rockspec-fix"
 }
 
 description = {
