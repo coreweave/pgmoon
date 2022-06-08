@@ -3,7 +3,7 @@ version = "dev-1"
 
 source = {
   url = "git+https://github.com/coreweave/pgmoon.git",
-  tag = "mc/haproxy-socket-with-rockspec-fix"
+  branch = "kc-haproxy-socket-with-rockspec-fix"
 }
 
 description = {
@@ -17,14 +17,6 @@ description = {
 dependencies = {
   "lua >= 5.1",
   "lpeg",
-
-  -- "luasocket",
-  -- "luasec",
-  --
-  -- "cqueues",
-  -- "luaossl"
-  --
-  -- "lua-resty-openssl",
 }
 
 build = {
